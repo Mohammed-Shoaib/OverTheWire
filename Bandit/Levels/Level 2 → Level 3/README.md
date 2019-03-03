@@ -14,12 +14,27 @@ ls, cd, cat, file, du, find
 
 ## Solution
 
-Login in to banditx with the password retrieved from [Level x](../Level%20x%20→%20Level%20y/).
+Login in to bandit2 with the password retrieved from [Level 2](../Level%201%20→%20Level%202/).
 
 ```
-ssh banditx@bandit.labs.overthewire.org -p 2220
+ssh bandit2@bandit.labs.overthewire.org -p 2220
 ```
 
-Head over to [Level y](../Level%20y%20→%20Level%20z/).
+If we run `ls` to list the files present,
 
-### Password for bandity
+```
+bandit2@bandit:~$ ls
+spaces in this filename
+```
+
+To `cat` a file with spaces in its name,
+```
+bandit2@bandit:~$ cat "spaces in this filename"
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+```
+
+Head over to [Level 4](../Level%203%20→%20Level%204/).
+
+### Password for bandit3
+
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
