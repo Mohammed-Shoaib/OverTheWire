@@ -16,12 +16,49 @@ ls, cd, cat, file, du, find
 
 ## Solution
 
-Login in to banditx with the password retrieved from [Level x](../Level%20x%20→%20Level%20y/).
+Login in to bandit1 with the password retrieved from [Level 1](../Level%200%20→%20Level%201/).
 
 ```
-ssh banditx@bandit.labs.overthewire.org -p 2220
+ssh bandit1@bandit.labs.overthewire.org -p 2220
 ```
 
-Head over to [Level y](../Level%20y%20→%20Level%20z/).
+If we run `ls` to list the files present,
 
-### Password for bandity
+```
+bandit1@bandit:~$ ls
+-
+```
+
+Sure enough, we see the file called `-`. Now you might think if we directly run `cat`, we can see the contents. However, that's not what happens.
+
+```
+cat -
+
+```
+
+We see the shell is waiting for a prompt. This is because in `bash`, the symbol `-` (hyphen) refers to `stdin` or standard input. If we try typing something,
+
+```
+bandit1@bandit:~$ cat -
+hello from bandit1!
+hello from bandit1!
+
+bandit1@bandit:~$
+```
+
+The input we type goes into `cat` and gets displayed. You can use `CTRL + C` to abort. So how do we avoid this?
+
+We somehow need to tell bash that we are not referring to `-` for input but to the file present. We can do this by,
+
+```
+bandit1@bandit:~$ cat ./-
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+```
+
+This let's shell know that we are trying to access the file and we get our password.
+
+Head over to [Level 3](../Level%202%20→%20Level%203/).
+
+### Password for bandit2
+
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
