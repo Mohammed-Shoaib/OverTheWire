@@ -10,12 +10,24 @@ ls, cd, cat, file, du, find
 
 ## Solution
 
-Login in to banditx with the password retrieved from [Level x](../Level%20x%20→%20Level%20y/).
+At this point you should have connected to OverTheWire server using `ssh`. If not, please check go to [Level 0](../Level%200/) for logging into the server.
+
+The goal of this level is to get to the **readme** file. For this, we can use `ls` which is a command to list the files present in the working directory.
 
 ```
-ssh banditx@bandit.labs.overthewire.org -p 2220
+bandit0@bandit:~$ ls
+readme
 ```
 
-Head over to [Level y](../Level%20y%20→%20Level%20z/).
+We can now see the readme file is present. To view the contents, we use `cat`.
 
-### Password for bandity
+```
+bandit0@bandit:~$ cat readme
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+```
+
+Head over to [Level 2](../Level%201%20→%20Level%202/).
+
+### Password for bandit1
+
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
