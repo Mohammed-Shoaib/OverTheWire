@@ -14,12 +14,25 @@ grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
 ## Solution
 
-Login in to banditx with the password retrieved from [Level x](../Level%20x%20→%20Level%20y/).
+Login in to bandit8 with the password retrieved from [Level 8](../Level%207%20→%20Level%208/).
 
 ```
-ssh banditx@bandit.labs.overthewire.org -p 2220
+ssh bandit8@bandit.labs.overthewire.org -p 2220
 ```
 
-Head over to [Level y](../Level%20y%20→%20Level%20z/).
+Just like the [previous](../Level%207%20→%20Level%208/) level we have a huge `data.txt` file. We need to print the unique lines, for this we will use the `uniq` command with the `-u` option. The `-u` specifies `uniq` to only report the lines that appear once. However, `uniq` expects input to be sorted, for this we can use the `sort` command. `sort` can be used on a file directly or can be used with the pipe symbol `|` with output redirection.
 
-### Password for bandity
+```
+bandit8@bandit:~$ ls
+data.txt
+bandit8@bandit:~$ sort data.txt | uniq -u
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+bandit8@bandit:~$ cat data.txt | sort | uniq -u
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+```
+
+Head over to [Level 10](../Level%209%20→%20Level%2010/).
+
+### Password for bandit9
+
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
