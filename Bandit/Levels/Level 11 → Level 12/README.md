@@ -14,12 +14,28 @@ grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd
 
 ## Solution
 
-Login in to banditx with the password retrieved from [Level x](../Level%20x%20→%20Level%20y/).
+Login in to bandit11 with the password retrieved from [Level 11](../Level%2010%20→%20Level%2011/).
 
 ```
-ssh banditx@bandit.labs.overthewire.org -p 2220
+ssh bandit11@bandit.labs.overthewire.org -p 2220
 ```
 
-Head over to [Level y](../Level%20y%20→%20Level%20z/).
+Running `ls` and `cat`,
 
-### Password for bandity
+```
+data.txt
+bandit11@bandit:~$ cat data.txt
+Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
+```
+
+We know from the description that all lowercase and uppercase letters have been rotated by 13 positions. This type of encoding is also known as **rot13**. Unix does not directly support decoding text which is in rot13 format. So, we will use an [online](https://www.rot13.com/) decoder.
+
+Decoding,
+
+![Rot13](https://i.imgur.com/SrTUsVk.png)
+
+Head over to [Level 12](../Level%2012%20→%20Level%2013/).
+
+### Password for bandit12
+
+5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
